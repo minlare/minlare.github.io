@@ -1,0 +1,171 @@
+$padding: (
+    tiny: 10px,
+    small: 20px,
+    default: 30px,
+    large: 40px,
+    huge: 60px,
+    massive: 80px,
+    none: 0
+);
+$margin: $padding;
+
+$grid-width: 1000px;
+
+@import '../../node_modules/outeredge-sass/sass/edge';
+
+html {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    @extend %height-100;
+}
+
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    @extend %text-center, %height-100;
+}
+
+h1 {
+    @extend %margin-top-tiny, %margin-bottom, %bold;
+}
+
+h2 {
+    font-size: 24px;
+    @extend %light, %margin-top-none;
+}
+
+h3 {
+    font-size: 24px;
+    @extend %light;
+}
+
+a {
+    @extend %text-inherit;
+}
+
+section {
+    @extend %padding-horizontal;
+    > div {
+        @extend %row, %padding-vertical-massive;
+    }
+}
+
+.main {
+    background-image: url(../images/pexels-photo-214670.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    @extend %flex, %flex-center, %text-white, %height-100, %text-center, %relative;
+    &:before {
+        content: '';
+        background-color: rgba(0,0,0,0.25);
+        @extend %absolute-fill;
+    }
+    span {
+        @extend %light;
+    }
+    > div > div {
+        font-size: 40px;
+        @extend %relative;
+        a {
+            border: 1px solid $white;
+            font-size: 22px;
+            will-change: color, background-color;
+            transition: all .25s;
+            @extend %padding-vertical-small, %padding-horizontal, %inline-block, %text-decoration-none, %light;
+            &:hover {
+                @extend %bg-white, %text-darkgrey;
+            }
+        }
+    }
+}
+
+.continue {
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    will-change: opacity;
+    transition: opacity .25s;
+    @extend %absolute, %light, %text-decoration-none, %opacity-80, %light;
+    &:hover {
+        @extend %opaque;
+    }
+    i {
+        @extend %margin-top-tiny;
+    }
+}
+
+.expertise {
+    > div > div {
+        @extend %flex, %flex-fill-equal;
+    }
+    ul {
+        list-style: none;
+        @extend %padding-none, %margin-none;
+        li {
+            @extend %margin-vertical-small, %bold;
+            span {
+                font-size: 14px;
+                @extend %not-bold, %block, %margin-top-tiny;
+            }
+        }
+    }
+}
+
+.work {
+    @extend %bg-whitesmoke;
+    h4 {
+        @extend %bold, %bigger, %margin-bottom-small;
+    }
+    p {
+        line-height: 175%;
+        @extend %smaller, %text-grey;
+        a {
+            border-bottom: 1px solid $grey;
+            @extend %text-decoration-none;
+        }
+    }
+    > div > div:first-of-type {
+        @extend %margin-bottom-huge;
+    }
+}
+
+footer {
+    background-color: #252a30;
+    font-size: 14px;
+    @extend %padding-vertical-huge, %text-center, %text-lightgrey;
+}
+
+.copyright {
+    @extend %light, %line-height-150, %margin-bottom, %margin-top-none;
+}
+
+.social a {
+    will-change: color;
+    transition: color .25s;
+    @extend %text-decoration-none, %margin-horizontal-tiny;
+    &:hover {
+        @extend %text-white;
+    }
+}
+
+
+
+
+@include media(tablet) {
+    .work > div > div {
+        @extend %tablet-flex, %tablet-flex-center;
+        > div {
+            @extend %tablet-padding-horizontal;
+            &:last-child {
+                @extend %tablet-text-left;
+            }
+        }
+        &:first-of-type > div:first-child {
+            @include flex-order(2);
+        }
+    }
+}

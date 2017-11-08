@@ -1,0 +1,8 @@
+{
+    "name": "minlare-portfolio",
+    "version": "1.0.0",
+    "description": "Michael Windell portfolio website",
+    "dependencies": {
+        "outeredge-sass": "1.0.1"
+    }
+}
