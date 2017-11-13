@@ -33,19 +33,20 @@ h1 {
 
 h2 {
     font-size: 24px;
-    @extend %light, %margin-top-none;
+    @extend %light, %margin-top-none, %line-height-150;
 }
 
 h3 {
-    font-size: 24px;
-    @extend %light;
+    font-size: 20px;
+    @extend %margin-top-huge;
 }
 
 a {
     @extend %text-inherit;
 }
 
-section {
+section,
+footer {
     @extend %padding-horizontal;
     > div {
         @extend %row, %padding-vertical-massive;
@@ -58,7 +59,8 @@ section {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    @extend %flex, %flex-center, %text-white, %height-100, %text-center, %relative;
+    min-height: 400px;
+    @extend %flex, %flex-vertical-center, %text-left, %text-white, %height-100, %relative;
     &:before {
         content: '';
         background-color: rgba(0,0,0,0.25);
@@ -89,7 +91,7 @@ section {
     transform: translateX(-50%);
     will-change: opacity;
     transition: opacity .25s;
-    @extend %absolute, %light, %text-decoration-none, %opacity-80, %light;
+    @extend %absolute, %light, %text-decoration-none, %opacity-80, %light, %text-center;
     &:hover {
         @extend %opaque;
     }
@@ -99,19 +101,16 @@ section {
 }
 
 .expertise {
-    > div > div {
-        @extend %flex, %flex-fill-equal;
+    > div {
+        max-width: 700px;
+        @extend %text-left;
     }
-    ul {
-        list-style: none;
-        @extend %padding-none, %margin-none;
-        li {
-            @extend %margin-vertical-small, %bold;
-            span {
-                font-size: 14px;
-                @extend %not-bold, %block, %margin-top-tiny;
-            }
-        }
+    h2 {
+        @extend %margin-bottom-huge;
+    }
+    p {
+        line-height: 175%;
+        @extend %text-grey, %small;
     }
 }
 
@@ -136,7 +135,7 @@ section {
 footer {
     background-color: #252a30;
     font-size: 14px;
-    @extend %padding-vertical-huge, %text-center, %text-lightgrey;
+    @extend %text-lightgrey;
 }
 
 .copyright {
