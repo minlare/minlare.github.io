@@ -3,6 +3,12 @@
     "version": "1.0.0",
     "description": "Michael Windell portfolio website",
     "dependencies": {
-        "outeredge-sass": "1.0.1"
+        "jquery": "^3.2.1",
+        "jquery-lazyload": "^1.9.7",
+        "jquery-smooth-scroll": "^2.2.0",
+        "outeredge-sass": "^1.0.1"
+    },
+    "devDependencies": {
+        "webpack": "^3.8.1"
     }
 }
