@@ -12,7 +12,7 @@ $margin: $padding;
 $grid-width: 1000px;
 
 @import '../../node_modules/outeredge-sass/sass/edge';
-@import '../../node_modules/html5-device-mockups/dist/device-mockups.css';
+@import '../../node_modules/html5-device-mockups/dist/device-mockups';
 
 html {
     -webkit-background-size: cover;
