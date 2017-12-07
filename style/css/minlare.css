@@ -7749,11 +7749,11 @@ footer {
   transition: color .25s; }
 
 .device-wrapper {
-  max-width: none; }
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto; }
 
 @media (min-width: 541px) {
-  .work > div > div > div:first-child {
-    max-width: 340px; }
   .work > div > div:first-of-type > div:first-child {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 2;

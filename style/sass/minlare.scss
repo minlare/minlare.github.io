@@ -56,7 +56,7 @@ footer {
 
 .main {
     background-image: url(../images/pexels-photo-214670.jpeg);
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -161,7 +161,9 @@ footer {
 }
 
 .device-wrapper {
-    max-width: none;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
     .screen {
         @extend %overflow-hidden;
     }
@@ -173,9 +175,6 @@ footer {
         @extend %tablet-flex, %tablet-flex-center, %tablet-flex-fill-equal;
         > div {
             @extend %tablet-padding-horizontal;
-            &:first-child {
-                max-width: 340px;
-            }
             &:last-child {
                 @extend %tablet-text-left;
             }
