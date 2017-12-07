@@ -7005,10 +7005,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-console.log('hello jQuery', __WEBPACK_IMPORTED_MODULE_0_jquery___default.a);
-console.log(__WEBPACK_IMPORTED_MODULE_1_jquery_lazyload___default.a);
-console.log(__WEBPACK_IMPORTED_MODULE_2_jquery_smooth_scroll___default.a);
-
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('a.continue').smoothScroll();
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('img.lazy').lazyload();
 

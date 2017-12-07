@@ -1,3 +1,4 @@
+@import url(../../node_modules/html5-device-mockups/dist/device-mockups.css);
 *,
 :before,
 :after {
@@ -1455,10 +1456,10 @@ footer > div {
 .margin-top-huge, h3 {
   margin-top: 60px; }
 
-.margin-bottom-huge, .expertise h2, .work > div > div:first-of-type {
+.margin-bottom-huge, .expertise h2 {
   margin-bottom: 60px; }
 
-.margin-vertical-huge {
+.margin-vertical-huge, .work > div > div {
   margin-top: 60px;
   margin-bottom: 60px; }
 
@@ -1757,7 +1758,7 @@ footer > div {
     margin-left: 0; }
   .tablet-margin-right-none {
     margin-right: 0; }
-  .tablet-margin-top-none {
+  .tablet-margin-top-none, .work > div > div h4 {
     margin-top: 0; }
   .tablet-margin-bottom-none {
     margin-bottom: 0; }
@@ -3643,7 +3644,7 @@ textarea, .appearance-none {
 .height-50 {
   height: 50%; }
 
-.width-50 {
+.width-50, .work > div > div > div:first-child .mobile-device {
   width: 50%; }
 
 .height-51 {
@@ -6247,7 +6248,7 @@ textarea, .appearance-none {
 .scroll {
   overflow: scroll; }
 
-.overflow-hidden {
+.overflow-hidden, .device-wrapper .screen {
   overflow: hidden; }
 
 .overflow-auto {
@@ -6331,10 +6332,10 @@ textarea, .appearance-none {
   .mobile-overflow-y-auto {
     overflow-y: auto; } }
 
-.relative, .main, .main > div > div {
+.relative, .main, .main > div > div, .work > div > div > div:first-child {
   position: relative; }
 
-.absolute, .absolute-fill, .main:before, .continue {
+.absolute, .absolute-fill, .main:before, .continue, .work > div > div > div:first-child .mobile-device {
   position: absolute; }
 
 .fixed, .fixed-fill {
@@ -7333,13 +7334,13 @@ footer > div {
     -moz-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
-  .tablet-flex-fill-equal > *, .tablet-flex-fill > * {
+  .tablet-flex-fill-equal > *, .work > div > div > *, .tablet-flex-fill > * {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -moz-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
-  .tablet-flex-fill-equal > * {
+  .tablet-flex-fill-equal > *, .work > div > div > * {
     -webkit-flex-basis: 0;
     -moz-flex-basis: 0;
     -ms-flex-preferred-size: 0;
@@ -7735,6 +7736,10 @@ h3 {
   .work p a {
     border-bottom: 1px solid #666666; }
 
+.work > div > div > div:first-child .mobile-device {
+  bottom: 0;
+  left: 10%; }
+
 footer {
   background-color: #252a30;
   font-size: 14px; }
@@ -7743,7 +7748,12 @@ footer {
   will-change: color;
   transition: color .25s; }
 
+.device-wrapper {
+  max-width: none; }
+
 @media (min-width: 541px) {
+  .work > div > div > div:first-child {
+    max-width: 340px; }
   .work > div > div:first-of-type > div:first-child {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 2;

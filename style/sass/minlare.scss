@@ -12,6 +12,7 @@ $margin: $padding;
 $grid-width: 1000px;
 
 @import '../../node_modules/outeredge-sass/sass/edge';
+@import '../../node_modules/html5-device-mockups/dist/device-mockups.css';
 
 html {
     -webkit-background-size: cover;
@@ -127,8 +128,16 @@ footer {
             @extend %text-decoration-none;
         }
     }
-    > div > div:first-of-type {
-        @extend %margin-bottom-huge;
+    > div > div {
+        @extend %margin-vertical-huge;
+        > div:first-child {
+            @extend %relative; 
+            .mobile-device {
+                bottom: 0;
+                left: 10%;
+                @extend %absolute, %width-50;
+            }
+        }
     }
 }
 
@@ -151,20 +160,31 @@ footer {
     }
 }
 
-
+.device-wrapper {
+    max-width: none;
+    .screen {
+        @extend %overflow-hidden;
+    }
+}
 
 
 @include media(tablet) {
     .work > div > div {
-        @extend %tablet-flex, %tablet-flex-center;
+        @extend %tablet-flex, %tablet-flex-center, %tablet-flex-fill-equal;
         > div {
             @extend %tablet-padding-horizontal;
+            &:first-child {
+                max-width: 340px;
+            }
             &:last-child {
                 @extend %tablet-text-left;
             }
         }
         &:first-of-type > div:first-child {
             @include flex-order(2);
+        }
+        h4 {
+            @extend %tablet-margin-top-none;
         }
     }
 }
